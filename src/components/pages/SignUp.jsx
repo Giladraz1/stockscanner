@@ -9,8 +9,6 @@ const SignUp = () => {
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
 
-  //  const accountsCollection = new Collection("accounts");
-
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");

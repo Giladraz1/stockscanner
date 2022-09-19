@@ -34,7 +34,6 @@ export default function StockNews() {
 
   useEffect(() => {
     fetchData();
-    // console.log("prop", chosenOption);
     const interval = setInterval(() => {
       fetchData();
     }, 100000000000000);

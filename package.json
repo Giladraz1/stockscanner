@@ -16,8 +16,6 @@
     "@mui/material": "^5.10.1",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
-    "dotenv": "^16.0.2",
-    "finnhub": "^1.2.15",
     "firebase": "^9.9.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -28,7 +26,6 @@
     "react-hook-form": "^7.34.2",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
-    "twind": "^0.16.17",
     "zustand": "^4.0.0"
   },
   "devDependencies": {

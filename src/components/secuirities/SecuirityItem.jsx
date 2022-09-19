@@ -1,6 +1,6 @@
 import { useAuth } from "../context/AuthContext";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db, auth } from "../../firebase/config";
 import { doc, addDoc, deleteDoc } from "firebase/firestore";
@@ -10,8 +10,6 @@ import moment from "moment/moment";
 export default function SecuirityItem({ chosenStock }) {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
-
-  // const [newWatchListStock, setNewWatchListStock] = useState("");
 
   var goToSignIn = function () {
     return navigate("/login", { replace: true });
@@ -26,11 +24,7 @@ export default function SecuirityItem({ chosenStock }) {
   };
 
   const handleAddToWatchlist = async () => {
-    console.log(auth.currentUser.uid);
-    console.log(chosenStock.symbol);
-    // Add a new document in collection "cities"
     const docRef = await addDoc(collection(db, "symbols"), {
-      //timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       symbol: chosenStock.symbol,
       userId: auth.currentUser.uid,
     });
@@ -120,7 +114,6 @@ export default function SecuirityItem({ chosenStock }) {
                             ? "btn btn-outline-primary btn-sm ms-3 py-2 mt-1 h-75 d-block"
                             : "d-none"
                         }
-                        // onClick={handleAddToWatchlist}
                         onClick={() => {
                           handleAddToWatchlist();
                           handleToggle();
@@ -192,8 +185,6 @@ export default function SecuirityItem({ chosenStock }) {
               </li>
             )}
           </ul>
-
-          {/* <p>{newWatchListStock}</p> */}
         </div>
       </div>
     </>

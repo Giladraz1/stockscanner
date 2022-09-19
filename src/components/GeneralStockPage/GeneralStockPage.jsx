@@ -6,10 +6,6 @@ import UnAuthNavBar from "../navbar/UnAuthNavBar";
 import AuthNavBar from "../navbar/AuthNavBar";
 import { useAuth } from "../context/AuthContext";
 
-// const mystyle = {
-//   padding: "0px 250px 0px 250px",
-// };
-
 export default function GeneralStockPage() {
   const { currentUser } = useAuth();
   return (

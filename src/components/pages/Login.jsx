@@ -5,8 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import ContainerLayout from "../UI/ContainerLayout/ContainerLayout";
 
-// import GooglePageLogin from "./GoogleSignIn";
-
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -30,7 +28,6 @@ const Login = () => {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       setMessage("login successfully");
-      // alert("Login success");
       return navigate("/dashboard");
     } catch (error) {
       setError(error.message);
@@ -69,7 +66,6 @@ const Login = () => {
         <div className="w-100 text-center">
           Need an account ? <Link to="/signup">Sign Up</Link>
         </div>
-        {/* <GooglePageLogin /> */}
       </ContainerLayout>
     </>
   );

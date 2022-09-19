@@ -13,7 +13,7 @@ import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import SearchBarNew from "../SearchComponents/SearchBarNew";
 

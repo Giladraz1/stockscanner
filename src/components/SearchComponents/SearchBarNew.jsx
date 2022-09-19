@@ -1,23 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
-import SecuirityCall from "../secuirities/SecuirityCall";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
 import CircularProgress from "@mui/material/CircularProgress";
 import useStore from "../../store/appStore";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import { Link } from "@mui/material";
-import GeneralStockPage from "../GeneralStockPage/GeneralStockPage";
-import { Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import { useAuth } from "../context/AuthContext";
 
 import YAHOO_FINANCE_API_KEY from "../../../API_KEYS";
 
 export default function SearchBarNew() {
-  //   const title = useStore((state) => state.title);
   const updateTitle = useStore((state) => state.updateTitle);
 
   const { currentUser } = useAuth();
@@ -28,7 +21,6 @@ export default function SearchBarNew() {
 
   const [stockApi, setStockApi] = useState([]);
   const [userStock, setUserStock] = useState(``);
-  //   const [acValue, setACValue] = useState("");
 
   const fetchData = (stock) => {
     setIsLoading(true);
@@ -62,18 +54,6 @@ export default function SearchBarNew() {
     fetchData(userStock);
   }, [userStock, inputValue]);
 
-  // var handleSubmit = function (event, stateVal) {
-  //   event.preventDefault();
-  //   console.log(event);
-  //   console.log(stateVal);
-  //   updateTitle(stateVal);
-  // };
-  useEffect(() => {
-    console.log("this is value", searchValue);
-    console.log("this is inputValue", inputValue);
-    console.log("MYKEY", YAHOO_FINANCE_API_KEY);
-  }, []);
-
   return (
     <>
       {searchValue && !currentUser ? (
@@ -84,30 +64,17 @@ export default function SearchBarNew() {
         ""
       )}
 
-      {/* {selectedStock ? (
-        <div>
-          <input
-            value={selectedStock}
-            onChange={(e) => setSelectedStock(e.target.value)}
-          />
-          <div>{selectedStock}</div>
-        </div>
-      ) : (
-        ""
-      )} */}
       <div className="py-3">
         <Autocomplete
-          // onChange={(event, value) => setACValue(value)}
           freeSolo
           disableClearable={false}
           autoHighlight={false}
           value={searchValue}
           onChange={(event, newValue) => {
-            console.log("autocomplete - onchange");
             setSearchValue(newValue);
-            //if (newValue) {
+
             updateTitle(newValue);
-            //}
+
             if (newValue === "") {
               setIsOpen(false);
             }
@@ -117,11 +84,8 @@ export default function SearchBarNew() {
           sx={{ width: 300 }}
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
-            console.log("autocomplete - onInputChange");
-
             setIsOpen(true);
             setInputValue(newInputValue);
-            // updateTitle(newInputValue);
           }}
           renderInput={(params) => (
             <TextField

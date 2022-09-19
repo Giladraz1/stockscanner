@@ -13,11 +13,7 @@ function GooglePageLogin() {
       <h1>Login</h1>
       <FirebaseAuthConsumer>
         {({ firebase }) => (
-          <button
-            // variant="contained"
-            // color="primary"
-            onClick={() => handleGoogleSignIn(firebase)}
-          >
+          <button onClick={() => handleGoogleSignIn(firebase)}>
             Sign in with Google
           </button>
         )}

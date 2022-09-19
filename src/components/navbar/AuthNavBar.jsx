@@ -12,11 +12,10 @@ import ListItemText from "@mui/material/ListItemText";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { styled, alpha } from "@mui/material/styles";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
 import SearchBarNew from "../SearchComponents/SearchBarNew";
@@ -36,32 +35,6 @@ const Search = styled("div")(({ theme }) => ({
     width: "auto",
   },
 }));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-
-const pages = ["Features", "Pricing", "Blog"];
 
 const drawerWidth = 240;
 
@@ -111,13 +84,7 @@ export default function AuthNavBar() {
         </Typography>
       </Box>
       <Divider />
-      <List>
-        {/* {pages.map((page) => (
-          <ListItem button key={page}>
-            <ListItemText primary={page} />
-          </ListItem>
-        ))} */}
-      </List>
+      <List></List>
       <Divider />
       <List>
         <ListItem button>
