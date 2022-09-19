@@ -8,58 +8,30 @@ import Delayed from "../Delayed/Delayed";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import Grow from "@mui/material/Grow";
-import YAHOO_FINANCE_API_KEY from "../../../API_KEYS";
 
-export default function Movers() {
-  // const [checked, setChecked] = useState(false);
-  // const handleChange = () => {
-  //   setChecked((prev) => !prev);
-  // };
+import { stockService } from "../../stock-service";
 
+export default function Gainers() {
   const [open, setOpen] = useState(false);
-  const [api, setApi] = useState([]);
-
-  const options = {
-    method: "GET",
-    url: "https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved",
-    params: { count: "25", scrIds: "day_gainers" },
-    headers: {
-      "x-api-key": YAHOO_FINANCE_API_KEY,
-    },
-  };
-
-  const fetchData = () => {
-    axios
-      .request(options)
-      .then(function (response) {
-        if (response.data) {
-          setApi(response.data.finance.result[0].quotes);
-        } else {
-          console.log("no");
-        }
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
+  const [gainers, setGainers] = useState([]);
 
   useEffect(() => {
-    fetchData();
-    const interval = setInterval(() => {
-      fetchData();
-    }, 10000);
-    return () => clearInterval(interval);
+    const fetchGainer = async () => {
+      const gainers = await stockService.getGainers();
+      setGainers(gainers);
+    };
+    fetchGainer();
   }, []);
 
   return (
     <div className="d-flex flex-column justify-content-center mb-5  mt-5">
       <div className="fw-bolder ps-2 ms-1">
-        Stocks: Movers
+        Stocks: Gainers
         <BsChevronRight style={{ height: "9px", fontWeight: "800" }} />
       </div>
       <TableTop />
       <div>
-        {api.slice(0, 5).map((item, index) => (
+        {gainers.slice(0, 5).map((item, index) => (
           <MoversItem key={index} trendingStock={item} />
         ))}
       </div>
@@ -88,7 +60,7 @@ export default function Movers() {
       <Collapse in={open}>
         <div id="example-collapse-text">
           <div>
-            {api.slice(5, 10).map((item, index) => (
+            {gainers.slice(5, 10).map((item, index) => (
               <MoversItem key={index} trendingStock={item} />
             ))}
           </div>

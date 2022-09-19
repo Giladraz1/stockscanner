@@ -10,34 +10,35 @@ import { BsChevronRight } from "react-icons/bs";
 import TableTop from "../UI/TableTop/TableTop";
 import YAHOO_FINANCE_API_KEY from "../../../API_KEYS";
 import { uniqueId } from "lodash";
+import { stockService } from "../../stock-service";
 
 export default function WatchList() {
   const [userStocks, setUserStocks] = useState([]);
 
-  const fetchStockData = (stockSymbol) => {
-    return new Promise((resolve, reject) => {
-      axios
-        .request({
-          method: "GET",
-          url: `https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=${stockSymbol}`,
-          headers: {
-            "x-api-key": YAHOO_FINANCE_API_KEY,
-          },
-        })
-        .then(function (response) {
-          if (response.data) {
-            resolve(response.data.quoteResponse.result[0]);
-          } else {
-            console.log("no");
-            reject("no");
-          }
-        })
-        .catch(function (error) {
-          console.error(error);
-          reject(error);
-        });
-    });
-  };
+  // const fetchStockData = (stockSymbol) => {
+  //   return new Promise((resolve, reject) => {
+  //     axios
+  //       .request({
+  //         method: "GET",
+  //         url: `https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=${stockSymbol}`,
+  //         headers: {
+  //           "x-api-key": YAHOO_FINANCE_API_KEY,
+  //         },
+  //       })
+  //       .then(function (response) {
+  //         if (response.data) {
+  //           resolve(response.data.quoteResponse.result[0]);
+  //         } else {
+  //           console.log("no");
+  //           reject("no");
+  //         }
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error);
+  //         reject(error);
+  //       });
+  //   });
+  // };
 
   async function getWatchlistStocks() {
     const myCollection = collection(db, "symbols");
@@ -54,7 +55,7 @@ export default function WatchList() {
     //[Promise<pending>]
     for (const stock of savedStocks) {
       console.log("stock symbol", stock.symbol);
-      stocksDataPromises.push(fetchStockData(stock.symbol));
+      stocksDataPromises.push(stockService.getStock(stock.symbol));
     }
 
     const stockData = await Promise.all(stocksDataPromises);

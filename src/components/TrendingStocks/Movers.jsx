@@ -8,47 +8,19 @@ import Delayed from "../Delayed/Delayed";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import Grow from "@mui/material/Grow";
-import YAHOO_FINANCE_API_KEY from "../../../API_KEYS";
+
+import { stockService } from "../../stock-service";
 
 export default function Movers() {
-  // const [checked, setChecked] = useState(false);
-  // const handleChange = () => {
-  //   setChecked((prev) => !prev);
-  // };
-
   const [open, setOpen] = useState(false);
-  const [api, setApi] = useState([]);
-
-  const options = {
-    method: "GET",
-    url: "https://yfapi.net/ws/screeners/v1/finance/screener/predefined/saved",
-    params: { count: "25", scrIds: "most_actives" },
-    headers: {
-      "x-api-key": YAHOO_FINANCE_API_KEY,
-    },
-  };
-
-  const fetchData = () => {
-    axios
-      .request(options)
-      .then(function (response) {
-        if (response.data) {
-          setApi(response.data.finance.result[0].quotes);
-        } else {
-          console.log("no");
-        }
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
+  const [movers, setMovers] = useState([]);
 
   useEffect(() => {
-    fetchData();
-    const interval = setInterval(() => {
-      fetchData();
-    }, 10000);
-    return () => clearInterval(interval);
+    const fetchLoser = async () => {
+      const movers = await stockService.getMovers();
+      setMovers(movers);
+    };
+    fetchLoser();
   }, []);
 
   return (
@@ -59,7 +31,7 @@ export default function Movers() {
       </div>
       <TableTop />
       <div>
-        {api.slice(0, 5).map((item, index) => (
+        {movers.slice(0, 5).map((item, index) => (
           <MoversItem key={index} trendingStock={item} />
         ))}
       </div>
@@ -88,7 +60,7 @@ export default function Movers() {
       <Collapse in={open}>
         <div id="example-collapse-text">
           <div>
-            {api.slice(5, 10).map((item, index) => (
+            {movers.slice(5, 10).map((item, index) => (
               <MoversItem key={index} trendingStock={item} />
             ))}
           </div>

@@ -65,7 +65,7 @@ const pages = ["Features", "Pricing", "Blog"];
 
 const drawerWidth = 240;
 
-export default function Homie() {
+export default function AuthNavBar() {
   const auth = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -158,7 +158,7 @@ export default function Homie() {
             <Box
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
             ></Box>
-            {location.pathname === "/dashboard" ? (
+            {currentUser ? (
               <Search>
                 <SearchBarNew />
               </Search>

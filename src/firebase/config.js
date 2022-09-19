@@ -6,16 +6,6 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// const firebaseConfig = {
-//   apiKey: process.env.FIREBASE_API_KEY,
-//   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-//   projectId: process.env.FIREBASE_PROJECTID,
-//   storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-//   messagingSenderId: process.env.FIREBASE_MESSAGING_ID,
-//   appId: process.env.FIREBASE_APPID,
-//   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
-// };
-
 const firebaseConfig = {
   apiKey: "AIzaSyDu2xr12WXaRo3O0jTLPfhaLXuzn5NWtm4",
   authDomain: "stockmarketlive-e71dc.firebaseapp.com",
@@ -25,8 +15,6 @@ const firebaseConfig = {
   appId: "1:851409949610:web:51d293150bacc081f991d3",
   measurementId: "G-Y0GZQZ8R1W",
 };
-
-// Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);

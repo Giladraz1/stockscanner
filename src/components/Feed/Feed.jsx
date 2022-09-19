@@ -1,13 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { maxHeight } from "@mui/system";
 import "./feed.css";
 import { BsChevronRight } from "react-icons/bs";
 
@@ -17,7 +12,7 @@ export default function Feed() {
   const options = {
     url: `https://newsapi.org/v2/top-headlines?country=us&category=business`,
     headers: {
-      "x-api-key": "dae726e413344f4bbbd27b15dc81b1d9",
+      "x-api-key": "09ba06a407424582b0f8af72f2d25797",
     },
     params: { pageSize: "10" },
   };
