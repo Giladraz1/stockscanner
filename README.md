@@ -16,7 +16,7 @@ The scanner is an online reactive program with multiple api's reflecting stock m
 * axios
 * firebase 
 * lodash 
-* moment" 
+* moment
 * react-dom 
 * react-google-charts 
 * react-router-dom 
