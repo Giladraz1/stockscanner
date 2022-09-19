@@ -24,48 +24,13 @@ The scanner is an online reactive program with multiple api's reflecting stock m
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Simply download the code to your machine to get started
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+to enjoy the scanner you should get your own Yahoo Finance API KEY and insert it in the API_KEYS component.
+To get zero errors, it is recomended to disable or remove any adblocker if you have one,
+and to uncheck "Show CORS errors in console".
 ```
-code blocks for commands
+npm install
 ```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
