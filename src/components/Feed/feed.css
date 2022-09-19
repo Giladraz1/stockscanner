@@ -1,0 +1,10 @@
+.text-hover:hover {
+    color: #2771FF;
+} 
+ 
+.text-hover{
+text-decoration: none;
+color: black;
+font-weight: 700;
+}
+

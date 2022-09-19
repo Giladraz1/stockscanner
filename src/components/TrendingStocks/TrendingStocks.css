@@ -1,0 +1,13 @@
+
+.text-underline-hover:hover {
+    text-decoration: underline;
+}
+
+
+.text-underline-hover{
+text-decoration: none;
+color: #2771FF;
+font-weight: 700;
+}
+
+
