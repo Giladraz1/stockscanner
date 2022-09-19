@@ -1,6 +1,6 @@
 # stockscanner
 
-Stock Scanner allows users to follow tradeble securities.
+Stock Scanner allows users to follow tradable securities.
 
 ## Description
 
