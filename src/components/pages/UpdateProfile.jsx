@@ -12,9 +12,7 @@ const UpdateProfile = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  useEffect(() => {
-    console.log(error.status);
-  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {

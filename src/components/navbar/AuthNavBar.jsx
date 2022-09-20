@@ -44,8 +44,6 @@ export default function AuthNavBar() {
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location);
 
   const { currentUser, logout } = useAuth();
   const handleLogout = async () => {
@@ -125,7 +123,7 @@ export default function AuthNavBar() {
             <Box
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
             ></Box>
-            {currentUser ? (
+            {currentUser && location.pathname === "/dashboard" ? (
               <Search>
                 <SearchBarNew />
               </Search>

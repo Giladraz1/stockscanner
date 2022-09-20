@@ -32,7 +32,6 @@ const SignUp = () => {
     try {
       setError("");
       setLoading(true);
-      console.log("this signup", signup);
       await signup(emailRef.current.value, passwordRef.current.value);
 
       setMessage("Registeration successful");
