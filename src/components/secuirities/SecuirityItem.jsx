@@ -45,7 +45,7 @@ export default function SecuirityItem({ chosenStock }) {
     });
 
     for (const docId of docsToDelete) {
-      console.log(docId);
+      // console.log(docId);
       deleteDoc(doc(db, "symbols", docId));
     }
   };

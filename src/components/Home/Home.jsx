@@ -17,13 +17,12 @@ export default function Home() {
     <>
       {!currentUser ? <UnAuthNavBar /> : <AuthNavBar />}
       <div className="container-xxl">
-        <div className="row d-flex justify-content-between">
-          <div className="order-2 order-lg-1 col-lg-8  mt-5">
+        <div className="row d-flex justify-content-between justify-content-md-center">
+          <div className="order-2 order-lg-1 col-lg-8 mt-5">
             <Iframe />
             <Feed />
           </div>
-          <div className="order-1 order-lg-2 col-lg-4 col-md-6 col-12">
-            {/* <div className="tablet-left-side"> */}
+          <div className="order-1 order-lg-2 col-md-8 col-lg-4  d-lg-block">
             {currentUser ? (
               <div className="mt-5">
                 <WatchList />
@@ -31,13 +30,9 @@ export default function Home() {
             ) : (
               ""
             )}
-
             <Movers />
-            {/* </div> */}
-            {/* <div className="tablet-right-side"> */}
             <Gainers />
             <Losers />
-            {/* </div> */}
           </div>
         </div>
       </div>

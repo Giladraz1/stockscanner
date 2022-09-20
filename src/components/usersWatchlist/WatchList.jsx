@@ -27,7 +27,7 @@ export default function WatchList() {
     const stocksDataPromises = [];
     //[Promise<pending>]
     for (const stock of savedStocks) {
-      console.log("stock symbol", stock.symbol);
+      // console.log("stock symbol", stock.symbol);
       stocksDataPromises.push(stockService.getStock(stock.symbol));
     }
 
