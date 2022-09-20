@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import Home from "../Home/oldHome";
+import Home from "../Home/Home";
 
 const Dashboard = () => {
   const navigate = useNavigate();

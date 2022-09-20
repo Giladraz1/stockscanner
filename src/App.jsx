@@ -6,7 +6,6 @@ import ForgotPassword from "./components/pages/ForgotPassword";
 import UpdateProfile from "./components/pages/UpdateProfile";
 import GeneralStockPage from "./components/GeneralStockPage/GeneralStockPage";
 import Home from "./components/Home/Home";
-import React, { useState, useEffect } from "react";
 
 function App() {
   return (

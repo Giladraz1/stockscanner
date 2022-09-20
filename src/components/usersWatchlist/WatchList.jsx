@@ -84,7 +84,7 @@ export default function WatchList() {
                       position: "absolute",
                       zIndex: "666",
                       right: "1px",
-                      top: "20px",
+                      top: "25px",
                     }}
                   >
                     <CloseIcon />

@@ -8,6 +8,7 @@ import WatchList from "../usersWatchlist/Watchlist";
 import { useAuth } from "../context/AuthContext";
 import Footer from "../Footer/Footer";
 import Iframe from "../Iframe/Iframe";
+import React from "react";
 
 export default function Home() {
   const { currentUser } = useAuth();
@@ -23,9 +24,14 @@ export default function Home() {
             <Feed />
           </div>
           <div className="order-1 order-lg-2 col-lg-4 ">
-            <div className="mt-5">
-              <WatchList />
-            </div>
+            {currentUser ? (
+              <div className="mt-5">
+                <WatchList />
+              </div>
+            ) : (
+              ""
+            )}
+
             <Movers />
             <Gainers />
             <Losers />

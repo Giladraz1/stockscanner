@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MoversItem from "./MoversItem";
-import axios from "axios";
 import TableTop from "../UI/TableTop/TableTop";
 import "../TrendingStocks/TrendingStocks.css";
 import { BsChevronDown, BsChevronUp, BsChevronRight } from "react-icons/bs";

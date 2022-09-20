@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MoversItem from "./MoversItem";
-import axios from "axios";
 import TableTop from "../UI/TableTop/TableTop";
 import "../TrendingStocks/TrendingStocks.css";
 import { BsChevronDown, BsChevronUp, BsChevronRight } from "react-icons/bs";
@@ -24,7 +23,7 @@ export default function Movers() {
   }, []);
 
   return (
-    <div className="d-flex flex-column justify-content-center mb-5  mt-5">
+    <div className="d-flex flex-column justify-content-center mb-5 mt-5">
       <div className="fw-bolder ps-2 ms-1">
         Stocks: Movers
         <BsChevronRight style={{ height: "9px", fontWeight: "800" }} />
