@@ -1,4 +1,3 @@
-import React from "react";
-const YAHOO_FINANCE_API_KEY = "YOUR_API_KEY";
+const YAHOO_FINANCE_API_KEY = "eDdXjDlWo65VPVfo23rzg3QYu5IM2IG879AInLif";
 
 export default YAHOO_FINANCE_API_KEY;
