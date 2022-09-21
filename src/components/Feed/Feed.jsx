@@ -12,7 +12,7 @@ export default function Feed() {
   const options = {
     url: `https://newsapi.org/v2/top-headlines?country=us&category=business`,
     headers: {
-      "x-api-key": "09ba06a407424582b0f8af72f2d25797",
+      "x-api-key": "53903be8230642ee81406c5b8c5c490c",
     },
     params: { pageSize: "10" },
   };
