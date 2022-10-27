@@ -28,13 +28,12 @@ Simply download the code to your machine to get started
 
 ### Executing program
 
-to enjoy the scanner you should get your own Yahoo Finance API KEY and insert it in the API_KEYS component.
 To get zero errors, it is recomended to disable or remove any adblocker if you have one,
 and to uncheck "Show CORS errors in console".
+
 ```
 npm install
 ```
-
 
 
 ## Preview
