@@ -6,6 +6,13 @@ Stock Scanner allows users to follow tradable securities.
 
 The scanner is an online reactive program with multiple api's reflecting stock market news, data and analasys.  
 
+Stock-Scanner: An online reactive program with multiple API's reflecting live stock market quotes,
+news and data analysis, user management preferences and a watch list. This app utilizes React as the
+frontend framework, Firebase as the backend-as-a-service provider, Zustand as the state
+management tool, Material UI for the user interface, Git for version control, Bootstrap for
+responsiveness, react-dom for rendering, react-google-charts for data visualization, and react-
+router-dom for handling routing in the application.
+
 ## Getting Started
 
 ### Dependencies
